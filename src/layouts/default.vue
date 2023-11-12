@@ -1,15 +1,3 @@
-<script setup lang="ts">
-import {ref} from 'vue';
-import {useRoute} from 'vue-router';
-const route = useRoute();
-
-const pageContainerStyles = ref({
-  maxWidth: route.meta.width || '1080px',
-  margin: '0 auto',
-});
-
-</script>
-
 <template>
   <q-layout view="hHh lpR fFf" class="bg-grey-4">
 
@@ -42,7 +30,12 @@ const pageContainerStyles = ref({
                label="유튜브"/>
 
         <q-separator class="q-my-md q-mr-md" vertical/>
-        <q-btn unelevated rounded color="primary" label="로그인 / 회원가입"/>
+        <q-btn unelevated
+               rounded
+               color="primary"
+               label="로그인 / 회원가입"
+               @click="openAuthDialog"
+        />
 
       </q-toolbar>
     </q-header>
@@ -51,5 +44,24 @@ const pageContainerStyles = ref({
       <router-view/>
     </q-page-container>
 
+    <AuthDialog v-model="authDialog"/>
   </q-layout>
 </template>
+
+<script setup lang="ts">
+import {ref} from 'vue';
+import {useRoute} from 'vue-router';
+import AuthDialog from 'components/auth/AuthDialog.vue';
+const route = useRoute();
+
+const pageContainerStyles = ref({
+  maxWidth: route.meta.width || '1080px',
+  margin: '0 auto',
+});
+
+const authDialog = ref(true);
+const openAuthDialog = () => {
+  authDialog.value = true;
+}
+
+</script>

@@ -1,10 +1,4 @@
-<script setup lang="ts">
 
-import {useRouter} from 'vue-router';
-
-const router = useRouter();
-const goPostDetails = (id: number) => router.push(`/posts/${id}`);
-</script>
 
 <template>
   <q-page padding>
@@ -22,6 +16,10 @@ const goPostDetails = (id: number) => router.push(`/posts/${id}`);
   </q-page>
 </template>
 
-<style>
+<script setup lang="ts">
 
-</style>
+import {useRouter} from 'vue-router';
+
+const router = useRouter();
+const goPostDetails = (id: number) => router.push(`/posts/${id}`);
+</script>

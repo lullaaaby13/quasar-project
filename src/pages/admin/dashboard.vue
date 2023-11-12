@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <h2>admin/dashboard.vue</h2>
 </template>

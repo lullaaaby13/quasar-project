@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <q-page padding>
     <div class="text-h4">Home</div>
