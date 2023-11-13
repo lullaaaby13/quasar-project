@@ -59,7 +59,7 @@ const pageContainerStyles = ref({
   margin: '0 auto',
 });
 
-const authDialog = ref(true);
+const authDialog = ref(false);
 const openAuthDialog = () => {
   authDialog.value = true;
 }
